@@ -1,9 +1,11 @@
 import '../assets/styles/globals.css';
-import { Button } from "../components/button";
+import NavHome from '../components/NavHome';
+
+
 
 export default function Page(){
     return(
 
-     <Button/>
+     <NavHome/>
     )
 }
