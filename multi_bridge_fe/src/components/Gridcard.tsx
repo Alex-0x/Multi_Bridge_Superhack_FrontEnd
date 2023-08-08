@@ -19,7 +19,7 @@ const cardData = [
   { id: 4, title: 'Mumbai - Sepolia', content: 'Transfer your CCIP from Mumbai to Sepolia', imageSrc: maticToEth },
   { id: 5, title: 'Optimism - Mumbai', content: 'Transfer your CCIP from Optimism to Mumbai', imageSrc: opToMatic },
   { id: 6, title: 'Mumbai - Optimism', content: 'Transfer your CCIP from Mumbai to Optimism', imageSrc: maticToOp },
-  // Aggiungi altre informazioni per le altre cards come necessario
+
 ];
 
 const Gridcard: React.FC = () => {
@@ -45,7 +45,7 @@ const Gridcard: React.FC = () => {
             </div>
             {card.isRotated && (
               <div className="card-content">
-                <NewCardContent cardId={card.id} /> {/* Nuova card con logica */}
+                <NewCardContent cardId={card.id} />
               </div>
             )}
           </div>
