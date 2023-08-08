@@ -1,0 +1,11 @@
+.card {
+    /* Aggiungi qui le tue personalizzazioni per lo stile di base della card */
+    transition: transform 1.5s,  background-color 1.5s; /* Aggiungi una transizione per l'effetto di rotazione */
+  }
+  
+  .rotated {
+    transform: rotateY(360deg); /* Applica la rotazione quando la classe rotated è presente */
+  background-color: #f0f0f0; /* Cambia il colore di sfondo durante la rotazione */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra per enfatizzare l'effetto */
+   
+  }
