@@ -6,10 +6,7 @@ import Form from './form';
 import { WriteContract } from './WriteContract';
 
 const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
-  // Implementa qui la logica e il contenuto specifici per ciascuna card ruotata
-  
-  // Ad esempio, puoi utilizzare uno switch statement per determinare
-  // quale logica applicare in base all'ID della card
+
   let content = null;
 
   switch (cardId) {
@@ -27,7 +24,7 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
         </div>
       );
       break;
-    // Aggiungi altri casi per le card con altri ID
+    
     default:
       content = (
         <div>
