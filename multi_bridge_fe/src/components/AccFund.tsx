@@ -6,14 +6,17 @@ import { SendLinkOptimism } from './transaction/sendLinkToOp';
 import { SendCcipOptimism } from './transaction/sendCcipToOp';
 import { SendLinkSepolia } from './transaction/sendLinkToSepolia';
 import { SendCcipSepolia } from './transaction/sendCcipToSepolia';
+import { SendCcipArbitrum } from './transaction/sendCcipToArbitrum';
 
 const sectionTitles = [
   'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Optimism',
   'Transaction to Transfer Funds in the Bridge Contract between Optimism and Sepolia',
   'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Mumbai',
   'Transaction to Transfer Funds in the Bridge Contract between Mumbai and Sepolia',
-  'Transaction to Transfer Funds in the Bridge Contract between Optimism and Mumbai',
-  'Transaction to Transfer Funds in the Bridge Contract between Mumbai and Optimism',
+  'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Arbitrum',
+  'Transaction to Transfer Funds in the Bridge Contract between Arbitrum and Sepolia',
+  'Transaction to Transfer Funds in the Bridge Contract between Arbitrum and Optimism',
+  'Transaction to Transfer Funds in the Bridge Contract between Optimism and Arbitrum',
 ];
 
 const sectionContents = [
@@ -22,31 +25,49 @@ const sectionContents = [
     <br />
     <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
   </div>,
+
    <div>
    <p>Transfer <b>Link</b></p><SendLinkOptimism />
    <br />
    <p>Transfer <b>Ccip</b></p><SendCcipOptimism />
  </div>,
+
   <div>
   <p>Transfer <b>Link</b></p><SendLinkSepolia />
   <br />
   <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
 </div>,
+
  <div>
  <p>Transfer <b>Link</b></p><SendLinkMumbai />
  <br />
  <p>Transfer <b>Ccip</b></p><SendCcipMumbai />
 </div>,
+
  <div>
- <p>Transfer <b>Link</b></p><SendLinkOptimism />
+ <p>Transfer <b>Link</b></p><SendLinkSepolia />
  <br />
- <p>Transfer <b>Ccip</b></p><SendCcipOptimism />
+ <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
 </div>,
+
  <div>
- <p>Transfer <b>Link</b></p><SendLinkMumbai />
+
  <br />
- <p>Transfer <b>Ccip</b></p><SendCcipMumbai />
+ <p>Transfer <b>Ccip</b></p><SendCcipArbitrum />
 </div>,
+
+<div>
+<p>Transfer <b>Ccip</b></p><SendCcipArbitrum />
+</div>,
+
+<div>
+<p>Transfer <b>Link</b></p><SendLinkOptimism />
+<br />
+<p>Transfer <b>Ccip</b></p><SendCcipOptimism />
+</div>,
+
+
+
   
 ];
 

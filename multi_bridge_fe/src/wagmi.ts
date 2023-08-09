@@ -1,5 +1,5 @@
 import { configureChains, createConfig, sepolia } from 'wagmi'
-import { avalancheFuji, goerli, mainnet, optimismGoerli, polygonMumbai } from 'wagmi/chains'
+import { arbitrumGoerli, avalancheFuji, goerli, mainnet, optimismGoerli, polygonMumbai } from 'wagmi/chains'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
@@ -10,12 +10,13 @@ import { alchemyProvider } from 'wagmi/providers/alchemy'
 const walletConnectProjectId = 'fc3c08a10094bdd2dbda3027971524f3'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [sepolia, goerli, polygonMumbai, optimismGoerli],
+  [sepolia, goerli, polygonMumbai, optimismGoerli, arbitrumGoerli],
   [
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_SEPOLIA! }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_GOERLI! }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_MUMBAI! }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_OPGOERLI! }),
+    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ABGOERLI! }),
   ],
 )
 
