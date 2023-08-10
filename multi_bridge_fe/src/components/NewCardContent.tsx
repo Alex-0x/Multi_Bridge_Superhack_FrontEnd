@@ -12,6 +12,9 @@ import { BridgeOptimismToArbitrum} from './interactionBridge/opToArbitrum';
 import { BridgeSepoliaToArbitrum } from './interactionBridge/sepoliaToArbitrum';
 import { BridgeArbitrumToSepolia } from './interactionBridge/arbitrumToSepolia';
 import { BridgeArbitrumToOp } from './interactionBridge/arbitrumToOp';
+import { DepositInSepolia } from './deposit/deposit_sepolia';
+import { DepositInSepoliaToMumbai } from './deposit/deposit_sepolia_Mumbai';
+import { WhitrodwalsFromMumbaiToSepolia } from './withdrawals /wi_mumbaiToSep';
 
 const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
 
@@ -21,7 +24,9 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
     case 1:
       content = (
         <div>
-         <BridgeSepoliaToOp/>
+         
+         <DepositInSepolia/>
+        
         </div>
       );
       break;
@@ -36,14 +41,14 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
     case 3:
       content = (
         <div>
-          <BridgeSepoliaToMumbai/>
+          <DepositInSepoliaToMumbai/>
         </div>
       );
       break;
       case 4:
         content = (
           <div>
-            <BridgeMumbaiToSepolia/>
+            <WhitrodwalsFromMumbaiToSepolia/>
           </div>
         );
         break;
