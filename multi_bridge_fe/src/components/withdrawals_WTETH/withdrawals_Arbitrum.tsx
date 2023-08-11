@@ -1,18 +1,14 @@
 'use client'
 
+import { BaseError, parseEther } from 'viem'
 import { useContractWrite, useWaitForTransaction } from 'wagmi'
-import {SepoliaConfig} from "../abiContract/sepolia"
-import { useDebounce } from '../../hooks/useDebounce'
-import { parseEther, stringify, BaseError} from 'viem'
+import {swapOp_config_arbitrum_from_sepolia} from "../../components/abiContract/abiWitKs/swapArbitrum"
+import { stringify } from '../../utils/stringify'
 
-
-const _destinationChainSelector = "6101244977088475029" 
-const tokenAddress = "0xFd57b4ddBf88a4e07fF4e34C487b99af2Fe82a05" as `0x${string}` 
-
-export function BridgeSepoliaToArbitrum() {
+export function WihdrawalsWTETH_Arbitrum() {
   const { write, data, error, isLoading, isError } = useContractWrite({
-    ...SepoliaConfig,
-    functionName: 'transferTokens',
+    ...swapOp_config_arbitrum_from_sepolia,
+    functionName: 'depositToken',
   })
   const {
     data: receipt,
@@ -20,27 +16,22 @@ export function BridgeSepoliaToArbitrum() {
     isSuccess,
   } = useWaitForTransaction({ hash: data?.hash })
 
-    const destinationChain = useDebounce(_destinationChainSelector)
-
-  
   return (
     <>
-      <h3>Bridge CCIP from Sepolia to Arbitrum</h3>
+      <h3>Withdrawals WTETH</h3>
       <form
         onSubmit={(e) => {
           e.preventDefault()
           const formData = new FormData(e.target as HTMLFormElement)
-          const receiver = formData.get('receiver') as `0x${string}`;
           const amount = formData.get('amount') as string
           write({
-            args: [BigInt(destinationChain), receiver , tokenAddress , parseEther(amount as `${number}`)],
+            args: [ parseEther(amount as `${number}`)],
           })
         }}
       >
-        <input name="receiver" placeholder="receiver" />
         <input name="amount" placeholder="amount" />
         <button disabled={isLoading} type="submit">
-          Send
+          withdrawal
         </button>
       </form>
 
@@ -48,10 +39,12 @@ export function BridgeSepoliaToArbitrum() {
       {isPending && <div>Transaction pending...</div>}
       {isSuccess && (
         <>
-          <div>Transaction Hash: {data?.hash}</div>
           <div>
-            Transaction Receipt: <pre>{stringify(receipt, null, 2)}</pre>
+          <a href={`https://goerli.arbiscan.io/tx/${data?.hash}`} target="_blank" rel="noopener noreferrer">withdrawal in optimism goerli explorer</a>
           </div>
+          {/* <div>
+            Transaction Receipt: <pre>{stringify(receipt, null, 2)}</pre>
+          </div> */}
         </>
       )}
       {isError && <div>{(error as BaseError)?.shortMessage}</div>}

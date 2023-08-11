@@ -3,17 +3,16 @@
 import { parseEther } from 'viem'
 import { useWaitForTransaction, useContractWrite, useAccount } from 'wagmi'
 import { stringify } from '../../utils/stringify'
-import {MumbaiConfig} from "../abiContract/mumbai"
+import {ArbitrumConfig} from "../abiContract/arbitrum"      //the same for every optimism departure
 import { useDebounce } from '../../hooks/useDebounce'
-import {swapMumbai_config} from "../../components/abiContract/abiWitKs/swapMumb" //the unique swap in mumbai
+import {swapOp_config_arbitrum_from_sepolia} from "../../components/abiContract/abiWitKs/swapArbitrum"     //change for every optimism departure
 import { useState } from 'react'
 
 const _destinationChainSelector = "16015286601757825753" 
-const tokenAddressCcipBnmMumbai = "0xf1E3A5842EeEF51F2967b3F05D45DD4f4205FF40" as `0x${string}`
+const tokenAddressCcipBnmArbitrum = "0x0579b4c1C8AcbfF13c6253f1B10d66896Bf399Ef" as `0x${string}`
 
-export function WhitrodwalsFromMumbaiToSepolia() {
+export function WhitrodwalsFromOptimismToArbitrum() {
     const { address } = useAccount()
-
 
     const [depositValue, setDepositValue] = useState<string>('');
 
@@ -21,14 +20,14 @@ export function WhitrodwalsFromMumbaiToSepolia() {
 
     //burn WTETH and Wihdrawals Ccip
     const { write : writeWihdrawalsCcip, data: DataWihdrawalsCcip, error: errorWihdrawalsCcip, isLoading: isLoadingWihdrawalsCcip, isError: isErrorWihdrawalsCcip } = useContractWrite({
-        ...swapMumbai_config,
+        ...swapOp_config_arbitrum_from_sepolia,
         functionName: 'withdrawCcip'
     })
 
         
     //transfer Ccip
     const { write, data: DatatransferCcip, error: errorTransferCcip, isLoading: isLoadingTransferCcip, isError: isErrorTransferCcip } = useContractWrite({
-        ...MumbaiConfig,
+        ...ArbitrumConfig,
         functionName: 'transferTokens',
       })
       const {
@@ -54,10 +53,11 @@ export function WhitrodwalsFromMumbaiToSepolia() {
             args:[ parseEther(value as `${number}`)]
           })
           write({
-            args: [BigInt(destinationChain), address as `0x${string}`, tokenAddressCcipBnmMumbai , parseEther(value as `${number}`)],
+            args: [BigInt(destinationChain), address as `0x${string}`, tokenAddressCcipBnmArbitrum , parseEther(value as `${number}`)],
           })
         }}
       >
+
     <input
     name="value"
     placeholder="value (ether)"
@@ -72,25 +72,12 @@ export function WhitrodwalsFromMumbaiToSepolia() {
       {isPending && <div>Transaction pending...</div>}
       {isSuccess && (
         <>
-        <div><a href={`https://mumbai.polygonscan.com/tx/${DataWihdrawalsCcip?.hash}`} target="_blank" rel="noopener noreferrer">burn WTETH and withdrawal ccip</a>
-        </div>
-        <br />
-        <div>
-            <p>progress bridge in ccip explorer:</p>
-            <p>copy this hash : {DatatransferCcip?.hash} and paste <a href="https://ccip.chain.link/msg" target="_blank" rel="noopener noreferrer">here</a></p>
-       
-        </div>
-        <br />
-{/*           
+          <div>Transaction Hash Wihdrawals Ccip: {DataWihdrawalsCcip?.hash}</div>
+          <div>Transaction Hash to Ccip: {DatatransferCcip?.hash}</div>
+          
           <div>
             Transaction Receipt: <pre>{stringify(receipt, null, 2)}</pre>
-          </div> */}
-
-          <h2>1.. Attend the <b>success</b> status in ccip explorer</h2>
-            <br />
-            <h3>2.. After you can procede for withdrawals in Sepolia chain your Eth</h3>
-          <br />
-          <h4>go to withdrawals page for continue  <a href="/dashboard/withdrawals-ETH">Withdrawals</a></h4>
+          </div>
         </>
       )}
       {isErrorWihdrawalsCcip && <div>Error: {errorWihdrawalsCcip?.message}</div>}

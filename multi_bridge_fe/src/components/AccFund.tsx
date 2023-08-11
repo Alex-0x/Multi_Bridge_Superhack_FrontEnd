@@ -9,64 +9,43 @@ import { SendCcipSepolia } from './transaction/sendCcipToSepolia';
 import { SendCcipArbitrum } from './transaction/sendCcipToArbitrum';
 
 const sectionTitles = [
-  'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Optimism',
-  'Transaction to Transfer Funds in the Bridge Contract between Optimism and Sepolia',
-  'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Mumbai',
-  'Transaction to Transfer Funds in the Bridge Contract between Mumbai and Sepolia',
-  'Transaction to Transfer Funds in the Bridge Contract between Sepolia and Arbitrum',
-  'Transaction to Transfer Funds in the Bridge Contract between Arbitrum and Sepolia',
-  'Transaction to Transfer Funds in the Bridge Contract between Arbitrum and Optimism',
-  'Transaction to Transfer Funds in the Bridge Contract between Optimism and Arbitrum',
+  'Buy Link in Etherum chain',
+  'Buy Link in Optimism chain',
+  'Buy Link in Polygon chain',
+  'Buy Link in Arbitrum chain',
 ];
 
 const sectionContents = [
     <div>
-    <p>Transfer <b>Link</b></p><SendLinkSepolia />
+    <p>buy <b>Link</b> in Ethereum</p>
+    <a href="https://app.uniswap.org/#/swap?chain=mainnet" target="_blank" rel="noopener noreferrer">uniswap</a>
     <br />
-    <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
+    <a href="https://faucets.chain.link/" target="_blank" rel="noopener noreferrer">testnet</a>
   </div>,
 
    <div>
-   <p>Transfer <b>Link</b></p><SendLinkOptimism />
+   <p>buy <b>Link</b> in Optimism</p>
+   <a href="https://app.uniswap.org/#/swap?chain=optimism" target="_blank" rel="noopener noreferrer">uniswap</a>
    <br />
-   <p>Transfer <b>Ccip</b></p><SendCcipOptimism />
+   <a href="https://faucets.chain.link/" target="_blank" rel="noopener noreferrer">testnet</a>
  </div>,
 
-  <div>
-  <p>Transfer <b>Link</b></p><SendLinkSepolia />
-  <br />
-  <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
-</div>,
 
  <div>
- <p>Transfer <b>Link</b></p><SendLinkMumbai />
+ <p>buy <b>Link</b> in Polygon</p>
+ <a href="https://app.uniswap.org/#/swap?chain=polygon" target="_blank" rel="noopener noreferrer">uniswap</a>
  <br />
- <p>Transfer <b>Ccip</b></p><SendCcipMumbai />
+ <a href="https://faucets.chain.link/" target="_blank" rel="noopener noreferrer">testnet</a>
 </div>,
+
 
  <div>
- <p>Transfer <b>Link</b></p><SendLinkSepolia />
  <br />
- <p>Transfer <b>Ccip</b></p><SendCcipSepolia />
-</div>,
-
- <div>
-
+ <p>buy <b>Ccip</b>in Arbitrum</p>
+ <a href="https://app.uniswap.org/#/swap?chain=arbitrum" target="_blank" rel="noopener noreferrer">uniswap</a>
  <br />
- <p>Transfer <b>Ccip</b></p><SendCcipArbitrum />
-</div>,
-
-<div>
-<p>Transfer <b>Ccip</b></p><SendCcipArbitrum />
-</div>,
-
-<div>
-<p>Transfer <b>Link</b></p><SendLinkOptimism />
-<br />
-<p>Transfer <b>Ccip</b></p><SendCcipOptimism />
-</div>,
-
-
+ <a href="https://faucets.chain.link/" target="_blank" rel="noopener noreferrer">testnet</a>
+</div>
 
   
 ];

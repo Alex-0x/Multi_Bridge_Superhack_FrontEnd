@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Image from 'next/image';
-import opToMatic from "../assets/img/opToMatic.png";
-import maticToOp from "../assets/img/maticToOp.png";
 import maticToEth from "../assets/img/maticToEth.png";
 import ethToMatic from "../assets/img/ethToMatic.png";
 import opToEth from "../assets/img/opToEth.png";

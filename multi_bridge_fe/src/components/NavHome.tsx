@@ -23,7 +23,10 @@ export default function NavHome(){
           <a className="nav-link" href="/dashboard/bridge">Bridges</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/dashboard/mint">Mint ccip</a>
+          <a className="nav-link" href="/dashboard/withdrawals-WTETH">Withdrawals WTETH</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/dashboard/withdrawals-ETH">Withdrawals ETH</a>
         </li>
       </ul>
     </div>

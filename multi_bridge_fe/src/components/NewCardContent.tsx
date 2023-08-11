@@ -1,6 +1,7 @@
 // NewCardContent.tsx
 
 import React from 'react';
+
 import { SendTransaction } from './SendTransaction';
 import Form from './form';
 import { WriteContract } from './WriteContract';
@@ -12,9 +13,12 @@ import { BridgeOptimismToArbitrum} from './interactionBridge/opToArbitrum';
 import { BridgeSepoliaToArbitrum } from './interactionBridge/sepoliaToArbitrum';
 import { BridgeArbitrumToSepolia } from './interactionBridge/arbitrumToSepolia';
 import { BridgeArbitrumToOp } from './interactionBridge/arbitrumToOp';
-import { DepositInSepolia } from './deposit/deposit_sepolia';
+import { DepositFromSepoliaToOptimism } from './deposit/deposit_sepolia_Op';
 import { DepositInSepoliaToMumbai } from './deposit/deposit_sepolia_Mumbai';
 import { WhitrodwalsFromMumbaiToSepolia } from './withdrawals /wi_mumbaiToSep';
+import { WhitrodwalsFromOptimismToSepolia } from './withdrawals /wi_optimismToSep';
+import { DepositInSepoliaToArbitrum } from './deposit/deposit_sepolia_Arbitrum';
+import { WhitrodwalsFromOptimismToArbitrum } from './withdrawals /wi_arbitrumToSep';
 
 const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
 
@@ -25,7 +29,7 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
       content = (
         <div>
          
-         <DepositInSepolia/>
+         <DepositFromSepoliaToOptimism/> 
         
         </div>
       );
@@ -33,7 +37,7 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
     case 2:
       content = (
         <div>
-          <BridgeOptimismToSepolia/>
+          <WhitrodwalsFromOptimismToSepolia/>
         </div>
       );
       break;
@@ -55,14 +59,14 @@ const NewCardContent: React.FC<{ cardId: number }> = ({ cardId }) => {
         case 5:
             content = (
               <div>
-                <BridgeSepoliaToArbitrum/>
+                <DepositInSepoliaToArbitrum/>
               </div>
             );
             break;
             case 6:
                 content = (
                   <div>
-                    <BridgeArbitrumToSepolia/>
+                    <WhitrodwalsFromOptimismToArbitrum/>
                   </div>
                 );
                 break;

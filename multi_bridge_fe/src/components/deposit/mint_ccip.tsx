@@ -1,7 +1,7 @@
 'use client'
 
 import { useContractWrite, useWaitForTransaction } from 'wagmi'
-import {ccip_abi_config_sepolia} from "../abiContract/abiDepKs/ccip_abi"
+import {ccip_abi_config_sepolia} from "../abiContract/abiDepKs/ccip_abi_sepolia"
 import { useDebounce } from '../../hooks/useDebounce'
 import { parseEther, stringify, BaseError } from 'viem'
 
