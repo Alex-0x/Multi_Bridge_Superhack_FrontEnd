@@ -1,0 +1,40 @@
+
+.network-switcher {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: rgba(135, 32, 214, 0.3); /* Sfondo viola chiaro e trasparente */
+}
+
+.connected-info {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.switch-options {
+  margin-top: 10px;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+.switch-options button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.switch-options button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  font-size: 14px;
+  color: #d9534f;
+  margin-top: 10px;
+}

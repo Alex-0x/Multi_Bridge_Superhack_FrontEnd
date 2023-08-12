@@ -1,0 +1,66 @@
+/* withdrawalsETHPage.css */
+
+.container {
+    margin-top: 20px;
+  }
+  
+  h1#title {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .menu-item.active {
+    color: #6f42c1; /* Colore viola acceso */
+  }
+  
+  .section {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    transition: opacity 0.3s;
+  }
+  
+  .section.active {
+    display: block;
+  }
+
+  #title{
+    font-size: 24px;
+    color: #3366cc;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #3366cc;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+.section#op {
+    background-color: rgba(239, 71, 71, 0.683);
+  }
+  
+
+  .section#mumb {
+    background-color: rgba(196, 72, 237, 0.734); 
+  }
+  
+
+  .section#arb {
+    background-color: rgba(86, 111, 234, 0.765); 
+  }
