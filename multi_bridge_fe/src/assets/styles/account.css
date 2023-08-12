@@ -1,0 +1,19 @@
+
+
+.account {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .address {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .address-ens {
+    font-size: 14px;
+    color: #777;
+  }
+  
