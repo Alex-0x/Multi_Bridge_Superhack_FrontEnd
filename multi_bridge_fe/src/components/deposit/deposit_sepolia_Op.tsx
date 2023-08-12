@@ -2,15 +2,11 @@
 import { useAccount, useEnsName } from 'wagmi'
 import { parseEther } from 'viem'
 import { useWaitForTransaction, useContractWrite } from 'wagmi'
-import { stringify } from '../../utils/stringify'
 import {SepoliaConfig} from "../abiContract/sepolia"            //the same for all sepolia departure
 import { useDebounce } from '../../hooks/useDebounce'
 import {dep_SepoliaConfig_to_op} from "../abiContract/abiDepKs/dep_sepolia_op"          //deposit from sepolia to op
 import {ccip_abi_config_sepolia} from "../abiContract/abiDepKs/ccip_abi_sepolia"  //drip the same for all sepolia departure
 import { useEffect, useState } from 'react'
-import { Allowance_ccipToken_Op } from '../allowanceCcipToken/allowance_op'
-import { WihdrawalsWTETH_OP } from '../withdrawals_WTETH/withdrawals_Optimism'
-import { NetworkSwitcher } from '../NetworkSwitcher'
 
 const _destinationChainSelector = "2664363617261496610"   //destination chain => optimism
 const tokenAddressCcipBnmSepolia = "0xFd57b4ddBf88a4e07fF4e34C487b99af2Fe82a05" as `0x${string}`  //ccip token sepolia
