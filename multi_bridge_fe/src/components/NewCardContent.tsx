@@ -2,16 +2,7 @@
 
 import React from 'react';
 
-import { SendTransaction } from './SendTransaction';
-import Form from './form';
-import { WriteContract } from './WriteContract';
-import { BridgeMumbaiToSepolia } from './interactionBridge/mumbaiToSepolia';
-import { BridgeSepoliaToMumbai } from './interactionBridge/sepoliaToMumbai';
-import { BridgeSepoliaToOp } from './interactionBridge/sepoliaToOp';
-import { BridgeOptimismToSepolia } from './interactionBridge/opToSepolia';
 import { BridgeOptimismToArbitrum} from './interactionBridge/opToArbitrum';
-import { BridgeSepoliaToArbitrum } from './interactionBridge/sepoliaToArbitrum';
-import { BridgeArbitrumToSepolia } from './interactionBridge/arbitrumToSepolia';
 import { BridgeArbitrumToOp } from './interactionBridge/arbitrumToOp';
 import { DepositFromSepoliaToOptimism } from './deposit/deposit_sepolia_Op';
 import { DepositInSepoliaToMumbai } from './deposit/deposit_sepolia_Mumbai';
