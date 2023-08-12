@@ -2,10 +2,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Connect } from './Connect'
 import Image from 'next/image'
 import bridge from "../assets/img/brige.png";
+import "../assets/styles/nav.css"
 
 export default function NavHome(){
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-dark">
   <div className="container-fluid">
   <a className="navbar-brand" href="/">
       <Image  src={bridge} alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
@@ -17,7 +18,7 @@ export default function NavHome(){
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/dashboard/fund">Send funds</a>
+          <a className="nav-link" aria-current="page" href="/dashboard/fund">Buy Link</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/dashboard/bridge">Bridges</a>
