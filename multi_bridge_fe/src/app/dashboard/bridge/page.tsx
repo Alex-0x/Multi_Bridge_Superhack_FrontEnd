@@ -10,7 +10,7 @@ export default function Page(){
         <NavHome/>
         <br />
         <br />
-        Account :<Account/>
+       <Account/>
         <br />
         <NetworkSwitcher/>
         <br />
