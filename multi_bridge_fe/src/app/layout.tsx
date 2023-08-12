@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-// import '../assets/styles/globals.css';  qui se volessimo creare un layout generale
 import { Providers } from './providers'
 
 
