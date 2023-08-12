@@ -1,16 +1,19 @@
 'use client'
 
-import { useAccount, useEnsName } from 'wagmi'
+import React from 'react';
+import { useAccount, useEnsName } from 'wagmi';
+import "../assets/styles/account.css";
 
 export function Account() {
-  const { address } = useAccount()
-  const { data: ensName } = useEnsName({ address })
+  const { address } = useAccount();
+  const { data: ensName } = useEnsName({ address });
 
   return (
-    
-    <div>
-      {ensName ?? address}
-      {ensName ? ` (${address})` : null}
+    <div className="account">
+      <div className="address">
+        {ensName ?? address}
+        {ensName && <span className="address-ens"> ({address})</span>}
+      </div>
     </div>
-  )
+  );
 }
